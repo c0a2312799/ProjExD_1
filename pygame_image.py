@@ -18,6 +18,7 @@ def main():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0])#スクリーン（左上を）に画像を貼り付ける
+        screen.blit(kk_img, [300, 200])#練習4
         pg.display.update()
         tmr += 1        
         clock.tick(10)
