@@ -22,17 +22,26 @@ def main():
             if event.type == pg.QUIT: return
         
         key_lst = pg.key.get_pressed()#練習8-3:キーの押下状態を修得する
+        
+        move_x, move_y = 0, 0
+
         if not any(key_lst):
-            kk_rct.move_ip((-1, 0))
+            move_x = -1
+
 
         if key_lst[pg.K_UP]: #上→キーがTrueなら
-            kk_rct.move_ip((-1, -1))#こうかとんの縦座標を-1する
+            move_x = -1
+            move_y = -1
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((-1, +1))#こうかとんの縦座標を+1する
+            kk_rct.move_ip((-1, +1))
+            move_x = -1
+            move_y = +1
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1, 0))#こうかとんの横座標を-1する
+            move_x = -1
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((+2, 0))#こうかとんの横座標を-1する
+            move_x = +2
+
+        kk_rct.move_ip(move_x, move_y)
 
         x = -(tmr % 3200)
         screen.blit(bg_img, [x, 0])#スクリーンに画像を貼り付ける/練習６間延び解消背景動かす
