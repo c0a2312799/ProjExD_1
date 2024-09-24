@@ -26,9 +26,9 @@ def main():
             kk_rct.move_ip((-1, 0))
 
         if key_lst[pg.K_UP]: #上→キーがTrueなら
-            kk_rct.move_ip((0, -1))#こうかとんの縦座標を-1する
+            kk_rct.move_ip((-1, -1))#こうかとんの縦座標を-1する
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0, +1))#こうかとんの縦座標を+1する
+            kk_rct.move_ip((-1, +1))#こうかとんの縦座標を+1する
         if key_lst[pg.K_LEFT]:
             kk_rct.move_ip((-1, 0))#こうかとんの横座標を-1する
         if key_lst[pg.K_RIGHT]:
